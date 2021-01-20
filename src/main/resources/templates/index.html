@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>维基百科检索框</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        <!-- background: url("/images/QQ图片20191109172332.jpg") no-repeat center;
+        --> background-size: cover;
+        }
+
+        .warp {
+            width: 100vw;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 150px;
+            min-height: fit-content;
+        }
+
+        main {
+            width: 550px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .search {
+            background: url("/images/search.svg") no-repeat center;
+            background-size: 24px 24px;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        .voice {
+            background: url("/images/voice.svg") no-repeat center;
+            background-size: 21px 21px;
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+
+        main input {
+            width: 100%;
+            border-radius: 25px;
+            padding: 15px 40px;
+            outline: none;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <header>
+        <img src="/images/Wikipedia_wordmark.svg" alt="">
+    </header>
+    <main>
+        <div class="search"></div>
+        <div class="voice"></div>
+        <form action="/search" method="get">
+            <label>
+                <input type="text" name="query" placeholder="在WikiPedia上搜索，支持 &&, || 和 !">
+            </label>
+        </form>
+    </main>
+</div>
+</body>
+</html>

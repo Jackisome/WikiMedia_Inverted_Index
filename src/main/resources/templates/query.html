@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Query</title>
+</head>
+<body>
+<tr th:each="entry, interStat:${entries}">
+    <td th:text="${interStat.index}">number</td>
+    <a th:href="@{'/getAllText?title=' + ${entry.getTitle()}}" th:text="${entry.getTitle()}">text</a>
+    <br>
+</tr>
+</body>
+</html>
